@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='css/style.min.css' />
+</head>
+
+<body>
+    <header><%= title %></header>
+    <div class="form">
+        <div id="holder">
+            <span class="center"><b>Drag Image Here</b></span>
+        </div>
+        <span id="status">File API and FileReader API not supported</span>
+        <div class="buttons">
+            <label for="image_uploads">Choose a image to upload to server (PNG, JPG)</label>
+            <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png">
+            <button class="submit" type="submit">Submit</button>
+        </div>
+        <p>Please <strong>DO NOT</strong> select image that size is over 960 px</p>
+        <div class="effect-mode">
+            <hr>
+            <table>
+                <tr><th><h3>Mode</h3></th></tr>
+                <tr>
+                    <td>
+                        <button class="crop"></button>
+                    </td><td>
+                        <button class="brush"></button>
+                    </td><td>
+                        <button class="filter">f</button>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+        </div>
+        <div class="effect-brush">
+            <table class="effect-brush-color">
+                <tr><th><h4>Color</h4></th></tr>
+                <tr>
+                    <td>
+                        <button class="black"></button>
+                    </td><td>
+                        <button class="blue"></button>
+                    </td><td>
+                        <button class="deep-blue"></button>
+                    </td><td>
+                        <button class="green"></button>
+                    </td><td>
+                        <button class="light-green"></button>
+                    </td><td>
+                        <button class="yellow"></button>
+                    </td><td>
+                        <button class="orange"></button>
+                    </td><td>
+                        <button class="pink"></button>
+                    </td><td>
+                        <button class="purple"></button>
+                    </td>
+                </tr>
+            </table>
+            <table class=" effect-brush-size">
+                <tr><th><h4>Size</h4></th></tr>
+                <tr>
+                    <td>
+                        <button class="large"></button>
+                    </td><td>
+                        <button class="medium"></button>
+                    </td><td>
+                        <button class="small"></button>
+                    </td>
+                </tr>
+            </table>
+            <hr>
+        </div>
+        <div class="effect-filter">
+            <div class="effect-filter-card">
+                <img class="effect-filter-img origin" style="width:100%">
+                <!-- origin -->
+                <h3 class="card-container">Origin</h3>
+            </div>
+            <div class="effect-filter-card">
+                <img class="effect-filter-img bright" style="width:100%">
+                <!-- higher saturate higher brightness -->
+                <h3 class="card-container">Bright</h3>
+            </div>
+            <div class="effect-filter-card">
+                <img class="effect-filter-img contrast" style="width:100%">
+                <!-- higher contrast -->
+                <h3 class="card-container">Contrast</h3>
+            </div>
+            <div class="effect-filter-card">
+                <img class="effect-filter-img classical" style="width:100%">
+                <!-- lower brightness lower saturate -->
+                <h3 class="card-container">Classical</h3>
+            </div>
+            <div class="effect-filter-card">
+                <img class="effect-filter-img gray-scale" style="width:100%">
+                <h3 class="card-container">Gray Scale</h3>
+            </div>
+            <hr>
+        </div>
+        <div class="preview">
+            <canvas width="960" height="960" id="canvas"></canvas>
+            <svg class="brush" width="960" height="960"></svg>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/d3-selection.v1.min.js"></script>
+    <script type="text/javascript" src="js/d3-dispatch.v1.min.js"></script>
+    <script type="text/javascript" src="js/d3-transition.v1.min.js"></script>
+    <script type="text/javascript" src="js/d3-drag.v1.min.js"></script>
+    <script type="text/javascript" src="js/d3-brush.v1.min.js"></script>
+    <script type="text/javascript" src="js/main.min.js"></script>
+</body>
+
+</html>
